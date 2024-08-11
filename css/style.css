@@ -560,9 +560,17 @@ header
   top: 0;
   right: 0;
   z-index: 10000;
-  background-color: white;
   flex-direction: row;
   flex-wrap: nowrap;
+  color: white;
+}
+.navbar a{
+  color: white;
+}
+
+.nav-bg{
+  background-color: white;
+  color: black;
 }
 
 .right {
@@ -587,12 +595,14 @@ header
 }
 .links a {
   text-decoration: none;
-  color: white;
   font-family: var(--titlefont);
   font-size: 13px;
-  color: black;
+  color: white;
   transition: all 0.5s;
   font-weight: 500;
+}
+.links-bg-white a{
+  color: black;
 }
 .links a:hover {
   color: var(--gray);
