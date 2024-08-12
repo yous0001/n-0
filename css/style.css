@@ -26,6 +26,9 @@ body:has(.contact:target) .contact-link {
 /* font-family: 'Poppins', sans-serif;
 font-family: 'Source Sans 3', sans-serif; */
 /*slider*/
+.home{
+  height: 100vh;
+}
 
 .title {
   margin-top: 50px;
@@ -329,11 +332,14 @@ font-family: 'Source Sans 3', sans-serif; */
   line-height: 18px;
 }
 
-.carousel-control-next-icon {
-  background-image: url(../imgs/arrow-right-solid.svg);
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  background-image: none;
+  position: relative;
+  z-index: 20;
 }
-.carousel-control-prev-icon {
-  background-image: url(../imgs/arrow-left-solid.svg);
+ 
+.carousel-control-next-icon i, .carousel-control-prev-icon i{
+  color: whtie;
 }
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
@@ -477,10 +483,7 @@ input {
 /*
 header
 */
-.img {
-  width: 100%;
-  height: 100%;
-}
+
 .carousel-item {
   position: relative;
 }
@@ -762,9 +765,10 @@ header
     left: 0;
     top: 50%;
     border: 1px white solid;
-    width: 40px;
     transition: left 1s;
     width: fit-content;
+    border-left: none;
+    padding: 7px;
   }
   .div-next{
     transform:translateY(50%) ;
@@ -773,18 +777,22 @@ header
     transform:translateY(-50%) ;
   }
   .div-next:hover.div-next::after,.div-prev:hover::after{
-    width: 100%;
-
+    right: 0;
+  }  
+  .div-next:hover i,.div-prev:hover i{
+    color: black;
+    z-index: 10;
   }
   .div-next::after,.div-prev::after{
     content: "";
-    width: 0%;
+    width: 100%;
     height: 100%;
     background-color: white;
     position: absolute;
-    
+    right: 100%;
     overflow: hidden;
-    z-index: 20;
+    z-index: 10;
+    transition: all 0.5s;
   }
   .after-it::after{
     content: "";
@@ -804,5 +812,4 @@ header
     90%{content: "web|";}
     100%{content: "|";}
   }
-
 
